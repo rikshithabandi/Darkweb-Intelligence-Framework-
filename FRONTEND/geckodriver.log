@@ -1,0 +1,17 @@
+1739867262226	geckodriver	INFO	Listening on 127.0.0.1:49807
+1739867265311	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--proxy-server=socks5h://127.0 ... " "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Shubam\\AppData\\Local\\Temp\\rust_mozprofileZ0AoiD"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1739867265893	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-proxy-server"
+1739867266058	Marionette	INFO	Listening on port 49830
+WebDriver BiDi listening on ws://127.0.0.1:49808
+Read port: 49830
+1739867266351	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+1739867267847	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+Exiting due to channel error.
+Listening on 127.0.0.1:50179
