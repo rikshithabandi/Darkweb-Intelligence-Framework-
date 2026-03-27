@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Onion Site Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="container mx-auto p-8">
+        <h2 class="text-yellow-400 text-2xl mb-4 text-center">Onion Site Details</h2>
+
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <p><strong>URL:</strong> 
+                <a href="{{ site.url }}" class="text-yellow-400 underline">{{ site.url }}</a>
+            </p>
+
+            <!-- 🔥 Threat Score Section -->
+            <div class="mt-3">
+                <p><strong>Threat Score:</strong> {{ site.threat_score }} / 100</p>
+                {% if site.threat_score > 70 %}
+                    <span class="text-red-500 font-bold">⚠ High Risk</span>
+                {% elif site.threat_score > 40 %}
+                    <span class="text-yellow-400 font-semibold">⚠ Medium Risk</span>
+                {% else %}
+                    <span class="text-green-400 font-semibold">✅ Low Risk</span>
+                {% endif %}
+            </div>
+            <!-- 🔥 End -->
+
+            <hr class="my-4 border-gray-700">
+
+            <p><strong>Extracted Text:</strong></p>
+            <p class="text-gray-300">{{ site.extracted_text }}</p>
+
+            <p class="mt-4"><strong>Hyperlinks:</strong></p>
+            <ul class="list-disc pl-6 text-gray-300">
+                {% for link in site.hyperlinks %}
+                    <li><a href="{{ link }}" class="text-yellow-400 underline">{{ link }}</a></li>
+                {% endfor %}
+            </ul>
+
+            {% if site.snapshot %}
+                <img src="{{ request.scheme }}://{{ request.get_host }}/{{ site.snapshot }}" 
+                     class="rounded-lg w-full mt-6" alt="Snapshot">
+            {% else %}
+                <p class="text-gray-400 mt-4">No Snapshot Available</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
